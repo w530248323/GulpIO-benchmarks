@@ -9,4 +9,4 @@ Contains scripts producing performance benchmarks for GulpIO using PyTorch
 # Steps to reproduce
 
 ## Download Jester dataset
-Follow instructions on `https://www.twentybn.com/datasets/jester`
+Follow instructions on - https://www.twentybn.com/datasets/jester
