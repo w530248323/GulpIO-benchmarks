@@ -63,25 +63,26 @@ following specs:
 ## Fetching runtime differences
 Fetched 50 batches each of size: `torch.Size([10, 3, 18, 84, 84])`
 
+
 ### Run 1
 ```
-nocache python data_loader_jpeg.py 
+nocache python data_loader_jpeg.py
 61.415191650390625
 
-nocache python data_loader_gulpio.py 
+nocache python data_loader_gulpio.py
 5.9158337116241455
 ```
 
 ### Run 2
 ```
-nocache python data_loader_jpeg.py 
+nocache python data_loader_jpeg.py
 58.36166548728943
 
-nocache python data_loader_gulpio.py 
+nocache python data_loader_gulpio.py
 6.112927436828613
 ```
 There is roughly 10 times difference in data fetching time, which is also
-corroborated by `sudo iotop` DISK READ speed. 
+corroborated by `sudo iotop` `DISK READ` speed.
 
 ## Training experiments
 - Jpeg script: `CUDA_VISIBLE_DEVICES=0 python train_jpeg.py --config configs/config_jpeg.json -g 0`
