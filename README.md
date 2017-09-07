@@ -25,10 +25,10 @@ utilities provided with the GulpIO package. Replace the paths accordingly for
 your machine.
 
 ```
-$ gulp_20bn_csv_jpeg  --num_workers=8 csv_files/jester-v1-train.csv /hdd/20bn-datasets/20bn-jes
+$ gulp_20bn_csv_jpeg --num_workers=8 csv_files/jester-v1-train.csv /hdd/20bn-datasets/20bn-jes
 ter-v1 /hdd/20bn-datasets/20bn-jester-v1-gulpio/train/
 
-$ gulp_20bn_csv_jpeg csv_files/jester-v1-validation.csv /hdd/20bn-datasets/20bn-jester-v1 /hdd/
+$ gulp_20bn_csv_jpeg --num_workers=8 csv_files/jester-v1-validation.csv /hdd/20bn-datasets/20bn-jester-v1 /hdd/
 20bn-datasets/20bn-jester-v1-gulpio/validation/
 ```
 
