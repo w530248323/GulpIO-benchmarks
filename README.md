@@ -5,7 +5,8 @@ Scripts to run performance benchmarks for GulpIO using PyTorch.
 # Requirements
 - Python 3.x
 - PyTorch (0.2.0.post4)
-- GulpIO
+- GulpIO (latest)
+- nocache
 
 # Steps to reproduce
 
