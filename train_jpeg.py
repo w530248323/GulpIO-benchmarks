@@ -179,11 +179,17 @@ def main():
             sys.exit(1)
 
         # train for one epoch
+        start_time_epoch = time.time()
         train_loss, train_top1, train_top5 = train(
             train_loader, model, criterion, optimizer, epoch)
+        print("Time taken for this 1 train epoch = {}".
+              format(time.time() - start_time_epoch))
 
         # evaluate on validation set
+        start_time_epoch = time.time()
         val_loss, val_top1, val_top5 = validate(val_loader, model, criterion)
+        print("Time taken for this 1 validation epoch = {}".
+              format(time.time() - start_time_epoch))
 
         # plot learning
         plotter_dict = {}
