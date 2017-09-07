@@ -28,7 +28,7 @@ Should obtain something like this:
 ```
 
 ## Before running any experiment, remove system-wide cache, using
-- sudo sysctl -w vm.drop_caches=3
+- `sudo sysctl -w vm.drop_caches=3`
 - Use `nocache` before running any command
 
 
@@ -41,6 +41,7 @@ Fetched 50 batches each of size: `torch.Size([10, 3, 18, 84, 84])`
 ```
 nocache python data_loader_jpeg.py 
 61.415191650390625
+
 nocache python data_loader_gulpio.py 
 5.9158337116241455
 ```
@@ -49,6 +50,7 @@ nocache python data_loader_gulpio.py
 ```
 nocache python data_loader_jpeg.py 
 58.36166548728943
+
 nocache python data_loader_gulpio.py 
 6.112927436828613
 ```
