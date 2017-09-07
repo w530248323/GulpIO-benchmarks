@@ -46,7 +46,7 @@ The *gulped* dataset is smaller because...
 
 ## Before running any experiment, remove system-wide cache, using
 - `sudo sysctl -w vm.drop_caches=3`
-- Use `nocache` before running any command
+- Use the `nocache` command line utility before running any command.
 
 
 # Experiments
