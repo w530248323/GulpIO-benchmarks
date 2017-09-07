@@ -53,7 +53,8 @@ essential to obtain accuerate results.
 
 When running an experiment, Use the `nocache` command line utility before
 executing any command. This should ensure that the filesystem cache is byassed
-and that you can run multiple times and still obtain accurate results.
+and that you can run multiple times and still obtain accurate results. You can
+read more about `nocache` here: https://github.com/Feh/nocache
 
 # Experiments
 
