@@ -124,11 +124,11 @@ Epoch: [0][1500/1852]   Time 0.463 (0.600)      Data 0.000 (0.191)      Loss 1.2
 Epoch: [0][1600/1852]   Time 0.464 (0.591)      Data 0.000 (0.179)      Loss 1.2961 (1.8634)    Prec@1 59.375 (44.140)  Prec@5 87.500 (77.967)
 Epoch: [0][1700/1852]   Time 0.464 (0.584)      Data 0.000 (0.168)      Loss 1.3273 (1.8323)    Prec@1 60.938 (45.009)  Prec@5 89.062 (78.635)
 Epoch: [0][1800/1852]   Time 0.469 (0.577)      Data 0.000 (0.159)      Loss 1.2787 (1.8019)    Prec@1 57.812 (45.827)  Prec@5 90.625 (79.255)
-Time taken for this 1 train epoch = 1062.678290605545
+ > Time taken for this 1 train epoch = 1062.678290605545
 Test: [0/232]   Time 6.247 (6.247)      Loss 1.5232 (1.5232)    Prec@1 53.125 (53.125)  Prec@5 82.812 (82.812)
 Test: [100/232] Time 0.181 (0.406)      Loss 1.1259 (1.3052)    Prec@1 70.312 (59.746)  Prec@5 95.312 (89.975)
 Test: [200/232] Time 0.182 (0.390)      Loss 1.2444 (1.3056)    Prec@1 59.375 (59.600)  Prec@5 92.188 (90.003)
  * Prec@1 59.654 Prec@5 90.011
-Time taken for this 1 validation epoch = 88.27695989608765
+ > Time taken for this 1 validation epoch = 88.27695989608765
 
 ```
