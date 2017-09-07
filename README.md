@@ -44,10 +44,15 @@ $ du -sch /hdd/20bn-datasets/
 The *gulped* dataset is smaller because...
 
 
-## Before running any experiment, remove system-wide cache, using
-- `sudo sysctl -w vm.drop_caches=3`
-- Use the `nocache` command line utility before running any command.
+## Cleaning the filesystem cache
 
+Before running any experiment, drop the filesystem cache, using: `sudo sysctl
+-w vm.drop_caches=3`. Since we are benchmarking disk-reads this step is
+essential to obtain accuerate results.
+
+When running an experiment, Use the `nocache` command line utility before
+executing any command. This should ensure that the filesystem cache is byassed
+and that you can run multiple times and still obtain accurate results.
 
 # Experiments
 
