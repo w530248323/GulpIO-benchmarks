@@ -2,6 +2,7 @@ import os
 import glob
 import numpy as np
 import torch
+import time
 
 from PIL import Image
 from data_parser import JpegDataset
@@ -52,7 +53,7 @@ class VideoFolder(torch.utils.data.Dataset):
         return (data, target_idx)
 
     def __len__(self):
-        return len(self.data)
+        return len(self.csv_data)
 
     def get_frame_names(self, path):
         frame_names = []
@@ -101,20 +102,17 @@ if __name__ == '__main__':
                          is_val=False,
                          transform=transform,
                          loader=default_loader)
-    data_item, target_idx = loader[0]
-    save_images_for_debug("input_images", data_item.unsqueeze(0))
+    # data_item, target_idx = loader[0]
+    # save_images_for_debug("input_images", data_item.unsqueeze(0))
 
-    # train_loader = torch.utils.data.DataLoader(
-    #     loader,
-    #     batch_size=16, shuffle=True,
-    #     num_workers=18, pin_memory=True)
+    train_loader = torch.utils.data.DataLoader(
+        loader,
+        batch_size=10, shuffle=False,
+        num_workers=5, pin_memory=True)
 
-    # count = 0
-    # start = time.time()
-    # for i, a in enumerate(train_loader):
-    #     if count == 100:
-    #         break
-    #     print(str(i), " -- ", str(a[0].size()))
-    #     count += 1
-
-    # print(time.time() - start)
+    start = time.time()
+    for i, a in enumerate(train_loader):
+        if i == 49:
+            break
+    print("Size --> {}".format(a[0].size()))
+    print(time.time() - start)

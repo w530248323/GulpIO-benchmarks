@@ -26,3 +26,31 @@ Should obtain something like this:
 30G     20bn-jester-v1-gulpio
 67G     total
 ```
+
+## Before running any experiment, remove system-wide cache, using
+- sudo sysctl -w vm.drop_caches=3
+- Use `nocache` before running any command
+
+
+# Experiments
+
+## Fetching runtime differences
+Fetched 50 batches each of size: `torch.Size([10, 3, 18, 84, 84])`
+
+### Run 1
+```
+nocache python data_loader_jpeg.py 
+61.415191650390625
+nocache python data_loader_gulpio.py 
+5.9158337116241455
+```
+
+### Run 2
+```
+nocache python data_loader_jpeg.py 
+58.36166548728943
+nocache python data_loader_gulpio.py 
+6.112927436828613
+```
+There is roughly 10 times difference in data fetching time, which is also
+corroborated by `sudo iotop` DISK READ speed. 

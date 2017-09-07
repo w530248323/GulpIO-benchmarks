@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 import numpy as np
 import torch
 import torch.utils.data as data
@@ -55,9 +56,8 @@ class VideoFolder(data.Dataset):
 
         frames, meta = self.gulp_directory[item.id, slice_object]
         if len(frames) < (self.clip_size * self.nclips):
-            frames = frames.extend([frames[-1]] *
-                                   ((self.clip_size * self.nclips) - len(frames)))
-
+            frames.extend([frames[-1]] *
+                          ((self.clip_size * self.nclips) - len(frames)))
         imgs = []
         for img in frames:
             img = self.transform(img)
@@ -76,7 +76,7 @@ class VideoFolder(data.Dataset):
 if __name__ == "__main__":
     transform = Compose([
                         ToPILImage(),
-                        CenterCrop(224),
+                        CenterCrop(84),
                         ToTensor(),
                         # Normalize(mean=[0.485, 0.456, 0.406],
                         #           std=[0.229, 0.224, 0.225])
@@ -91,19 +91,17 @@ if __name__ == "__main__":
                          transform=transform,
                          )
 
-    data, target_idx = loader[0]
-    print(target_idx, loader.classes_dict[target_idx])
-    save_images_for_debug("input_images", data.unsqueeze(0))
-    sys.exit()
+    # data, target_idx = loader[0]
+    # save_images_for_debug("input_images", data.unsqueeze(0))
+
     train_loader = torch.utils.data.DataLoader(
         loader,
-        batch_size=16, shuffle=False,
+        batch_size=10, shuffle=False,
         num_workers=5, pin_memory=True)
 
-    # train_loader_iter = iter(train_loader)
-    # for i in range(10):
-    #     print(next(train_loader_iter)[0].size())
-
-    for i, (input, target, num_frames) in enumerate(train_loader):
-        if i % 100 == 0:
-            print("Step = {}".format(i))
+    start = time.time()
+    for i, a in enumerate(train_loader):
+        if i == 49:
+            break
+    print("Size --> {}".format(a[0].size()))
+    print(time.time() - start)
