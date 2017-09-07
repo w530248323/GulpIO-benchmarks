@@ -18,7 +18,7 @@ gestures. The dataset is available from: https://www.twentybn.com/datasets/jeste
 
 Be sure to grab both the CSV files with the labels and the actual data.
 
-## Gulp the dataset
+## *Gulp* the dataset
 
 Before you begin, you must *gulp* the dataset. You can use the command-line
 utilities provided with the GulpIO package. Replace the paths accordingly for
