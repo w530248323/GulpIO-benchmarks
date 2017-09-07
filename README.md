@@ -56,3 +56,8 @@ nocache python data_loader_gulpio.py
 ```
 There is roughly 10 times difference in data fetching time, which is also
 corroborated by `sudo iotop` DISK READ speed. 
+
+## Training experiments
+- Jpeg script: `CUDA_VISIBLE_DEVICES=0 python train_jpeg.py --config configs/config_jpeg.json -g 0`
+- GulpIO script: `CUDA_VISIBLE_DEVICES=1 python train_gulp.py --config configs/config_gulpio.json -g 0`
+
