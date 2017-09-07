@@ -1,0 +1,26 @@
+{
+    "model_name": "jester_conv_example",
+    "checkpoint": null,
+
+    "train_data_folder": "/hdd/20bn-datasets/20bn-jester-v1-gulpio/train/",
+    "val_data_folder": "/hdd/20bn-datasets/20bn-jester-v1-gulpio/validation/",
+    "train_data_csv": "csv_files/jester-v1-train.csv",
+    "val_data_csv": "csv_files/jester-v1-validation.csv",
+    "labels_csv": "csv_files/jester-v1-labels.csv",
+
+    "num_workers": 5,
+
+    "output_dir": "trainings/gulp_model/",
+
+    "num_classes": 27,
+    "batch_size": 16,
+    "clip_size": 18,
+    "nclips": 1,
+    "step_size": 2,
+    "lr": 0.001,
+    "last_lr": 0.00001,
+    "momentum": 0.9,
+    "weight_decay": 0.00001,
+    "num_epochs": -1,
+    "print_freq": 100
+}
