@@ -1,5 +1,6 @@
 # GulpIO-benchmarks
-Contains scripts producing performance benchmarks for GulpIO using PyTorch
+
+Scripts to run performance benchmarks for GulpIO using PyTorch.
 
 # Requirements
 - Python 3.x
