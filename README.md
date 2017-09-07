@@ -51,6 +51,15 @@ The *gulped* dataset is smaller because...
 
 # Experiments
 
+All the resultes reported here were run on a desktop dual GPU sytem with the
+following specs:
+
+* 2x GTX 1080 Ti
+* Hexacore  Intel i7-6850K Processor
+* 128 GB RAM
+* 3TB Western Digital disk
+* MSI x99A Motherboard
+
 ## Fetching runtime differences
 Fetched 50 batches each of size: `torch.Size([10, 3, 18, 84, 84])`
 
