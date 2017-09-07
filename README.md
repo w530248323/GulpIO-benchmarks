@@ -10,8 +10,19 @@ Scripts to run performance benchmarks for GulpIO using PyTorch.
 
 # Steps to reproduce
 
-## Download Jester dataset
-Follow instructions on - https://www.twentybn.com/datasets/jester
+## Download *Jester* dataset
+
+During these benchmarks, we will use the publically available 20BN-jester
+dataset, a collection of around 150k short videos of people performing hand
+gestures. The dataset is available from: https://www.twentybn.com/datasets/jester
+
+Be sure to grab both the CSV files with the labels and the actual data.
+
+## Gulp the dataset
+
+Before you begin, you must *gulp* the dataset. You can use the command-line
+utilities provided with the GulpIO package. Replace the paths accordingly for
+your machine.
 
 ## Gulping the dataset (need to build GulpIO first)
 ```
