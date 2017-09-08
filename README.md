@@ -94,11 +94,46 @@ corroborated by `sudo iotop` `DISK READ` speed.
 ## Training experiments
 - Jpeg script: `CUDA_VISIBLE_DEVICES=0 python train_jpeg.py --config configs/config_jpeg.json -g 0`
 ### Epoch 1 result
+```
+(torch) root@7396071ace7e:/home/rgoyal/GulpIO-benchmarks# CUDA_VISIBLE_DEVICES=0,1 python train_jpeg.py --config configs/config_jpeg.json -g 0,1
+=> active GPUs: 0,1
+=> Output folder for this run -- jester_conv_example
+ > Using 10 processes for data loader.
+ > Training is getting started...
+ > Training takes 999999 epochs.
+ > Current LR : 0.001
+Epoch: [0][0/1852]      Time 77.101 (77.101)    Data 73.654 (73.654)    Loss 3.3249 (3.3249)    Prec@1 0.000 (0.000)    Prec@5 21.875 (21.875)
+Epoch: [0][100/1852]    Time 36.009 (7.519)     Data 35.798 (7.183)     Loss 2.6882 (3.0521)    Prec@1 21.875 (13.784)  Prec@5 54.688 (40.161)
+Epoch: [0][200/1852]    Time 13.762 (6.756)     Data 13.562 (6.433)     Loss 2.5396 (2.8169)    Prec@1 20.312 (19.652)  Prec@5 62.500 (50.451)
+Epoch: [0][300/1852]    Time 0.448 (6.215)      Data 0.000 (5.913)      Loss 2.3121 (2.6564)    Prec@1 31.250 (23.718)  Prec@5 75.000 (56.442)
+Epoch: [0][400/1852]    Time 0.446 (5.977)      Data 0.000 (5.682)      Loss 1.9901 (2.5193)    Prec@1 31.250 (27.252)  Prec@5 79.688 (60.895)
+Epoch: [0][500/1852]    Time 8.758 (5.712)      Data 8.557 (5.420)      Loss 1.9237 (2.4099)    Prec@1 35.938 (29.959)  Prec@5 75.000 (64.278)
+Epoch: [0][600/1852]    Time 4.295 (5.515)      Data 4.100 (5.229)      Loss 1.8182 (2.3160)    Prec@1 39.062 (32.246)  Prec@5 82.812 (66.948)
+Epoch: [0][700/1852]    Time 16.553 (5.373)     Data 16.354 (5.091)     Loss 1.6808 (2.2377)    Prec@1 53.125 (34.328)  Prec@5 75.000 (69.042)
+Epoch: [0][800/1852]    Time 10.476 (5.315)     Data 10.281 (5.036)     Loss 1.8370 (2.1635)    Prec@1 46.875 (36.177)  Prec@5 76.562 (70.917)
+Epoch: [0][900/1852]    Time 4.828 (5.217)      Data 4.633 (4.939)      Loss 1.6161 (2.1034)    Prec@1 51.562 (37.725)  Prec@5 84.375 (72.435)
+Epoch: [0][1000/1852]   Time 0.579 (5.134)      Data 0.385 (4.858)      Loss 1.3078 (2.0483)    Prec@1 51.562 (39.253)  Prec@5 92.188 (73.728)
+Epoch: [0][1100/1852]   Time 6.064 (5.080)      Data 5.870 (4.807)      Loss 1.2345 (1.9975)    Prec@1 67.188 (40.553)  Prec@5 93.750 (74.965)
+Epoch: [0][1200/1852]   Time 0.456 (5.049)      Data 0.000 (4.777)      Loss 1.2092 (1.9520)    Prec@1 60.938 (41.735)  Prec@5 95.312 (76.025)
+Epoch: [0][1300/1852]   Time 3.056 (5.007)      Data 2.859 (4.736)      Loss 1.5243 (1.9103)    Prec@1 51.562 (42.858)  Prec@5 89.062 (76.974)
+Epoch: [0][1400/1852]   Time 7.279 (4.969)      Data 7.078 (4.700)      Loss 1.2300 (1.8731)    Prec@1 57.812 (43.926)  Prec@5 95.312 (77.823)
+Epoch: [0][1500/1852]   Time 0.450 (4.931)      Data 0.000 (4.661)      Loss 1.4034 (1.8372)    Prec@1 56.250 (44.930)  Prec@5 90.625 (78.598)
+Epoch: [0][1600/1852]   Time 0.453 (4.902)      Data 0.000 (4.633)      Loss 1.4313 (1.8042)    Prec@1 65.625 (45.838)  Prec@5 85.938 (79.316)
+Epoch: [0][1700/1852]   Time 18.933 (4.912)     Data 18.731 (4.643)     Loss 1.1203 (1.7746)    Prec@1 57.812 (46.653)  Prec@5 98.438 (79.946)
+Epoch: [0][1800/1852]   Time 13.898 (4.891)     Data 13.703 (4.622)     Loss 0.8500 (1.7465)    Prec@1 70.312 (47.428)  Prec@5 95.312 (80.526)
+ > Time taken for this 1 train epoch = 9006.512176513672
+Test: [0/232]   Time 51.331 (51.331)    Loss 1.4411 (1.4411)    Prec@1 56.250 (56.250)  Prec@5 85.938 (85.938)
+Test: [100/232] Time 22.490 (4.912)     Loss 1.0960 (1.2629)    Prec@1 70.312 (61.170)  Prec@5 93.750 (89.991)
+Test: [200/232] Time 7.981 (4.887)      Loss 1.2686 (1.2686)    Prec@1 67.188 (60.844)  Prec@5 87.500 (90.003)
+ * Prec@1 60.905 Prec@5 89.978
+ > Time taken for this 1 validation epoch = 1096.5894315242767
+```
+
 
 - GulpIO script: `CUDA_VISIBLE_DEVICES=1 python train_gulp.py --config configs/config_gulpio.json -g 0`
 ### Epoch 1 result
 ```
-(torch) root@7396071ace7e:/home/rgoyal/GulpIO-benchmarks# CUDA_VISIBLE_DEVICES=0,1 python train_gulp.py --config configs/config_gulpio.json -[13/511]
+(torch) root@7396071ace7e:/home/rgoyal/GulpIO-benchmarks# CUDA_VISIBLE_DEVICES=0,1 python train_gulp.py --config configs/config_gulpio.json
 => active GPUs: 0,1
 => Output folder for this run -- jester_conv_example
  > Using 10 processes for data loader.
@@ -130,5 +165,4 @@ Test: [100/232] Time 0.181 (0.406)      Loss 1.1259 (1.3052)    Prec@1 70.312 (5
 Test: [200/232] Time 0.182 (0.390)      Loss 1.2444 (1.3056)    Prec@1 59.375 (59.600)  Prec@5 92.188 (90.003)
  * Prec@1 59.654 Prec@5 90.011
  > Time taken for this 1 validation epoch = 88.27695989608765
-
 ```
