@@ -16,14 +16,14 @@ import torch.optim
 import torch.utils.data
 
 from pprint import pprint
-from data_loader_gulpio import VideoFolder
+from data_loader_jpeg import VideoFolder
 from callbacks import PlotLearning, MonitorLRDecay, AverageMeter
 from model import ConvColumn
 from torchvision.transforms import *
 
 
 parser = argparse.ArgumentParser(
-    description='PyTorch Jester Training using GulpIO')
+    description='PyTorch Jester Training using JPEG')
 parser.add_argument('--config', '-c', help='json config file path')
 parser.add_argument('--eval_only', '-e',
                     help="evaluate trained model on validation data.")
@@ -96,7 +96,6 @@ def main():
     cudnn.benchmark = False
 
     transform = Compose([
-        ToPILImage(),
         CenterCrop(84),
         ToTensor(),
         Normalize(mean=[0.485, 0.456, 0.406],
